@@ -14,4 +14,13 @@ interface PersonService {
         @Field("email") email: String,
         @Field("password") password: String
     ): Call<HeaderModel>
+
+    @POST("Authentication/create")
+    @FormUrlEncoded
+    fun create(
+        @Field("name") name: String,
+        @Field("email") email: String,
+        @Field("password") password: String,
+        @Field("receiveNews") news: Boolean
+    ): Call<HeaderModel>
 }
